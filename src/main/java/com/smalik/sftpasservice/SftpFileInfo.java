@@ -2,14 +2,14 @@ package com.smalik.sftpasservice;
 
 import java.util.Date;
 
-public class FileInfo {
+public class SftpFileInfo {
 
     private boolean directory;
     private String name;
     private Date creationTime;
     private long size;
 
-    public FileInfo(String name, Date creationTime, boolean directory, long size) {
+    public SftpFileInfo(String name, Date creationTime, boolean directory, long size) {
         this.name = name;
         this.creationTime = creationTime;
         this.directory = directory;

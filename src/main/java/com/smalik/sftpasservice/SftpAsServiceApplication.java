@@ -13,11 +13,11 @@ public class SftpAsServiceApplication {
 	}
 
 	@Bean
-    public JschConnectionFactory createFactory(
+    public SftpConnectionFactory createFactory(
             @Value("${sftp.host:127.0.0.1}") String host,
             @Value("${sftp.port:2222}") int port,
             @Value("${sftp.user:foo}") String user,
             @Value("${sftp.password:pass}") String password) {
-	    return new JschConnectionFactory(host, port, user, password);
+	    return new SftpConnectionFactory(host, port, user, password);
     }
 }

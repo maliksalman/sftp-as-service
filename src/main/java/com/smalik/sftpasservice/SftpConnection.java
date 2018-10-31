@@ -6,14 +6,14 @@ import com.jcraft.jsch.Session;
 
 import java.io.Closeable;
 
-public class JschConnection implements Closeable {
+public class SftpConnection implements Closeable {
 
     private Session session;
     private ChannelSftp channel;
 
-    public JschConnection(String host, int port, String user, String password) throws Exception {
-        JSch jSch = new JSch();
-        session = jSch.getSession(user, host, port);
+    public SftpConnection(String host, int port, String user, String password) throws Exception {
+
+        session = new JSch().getSession(user, host, port);
         session.setConfig("StrictHostKeyChecking", "no");
         session.setPassword(password);
         session.connect();
