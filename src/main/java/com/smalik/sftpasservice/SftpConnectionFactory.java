@@ -17,7 +17,7 @@ public class SftpConnectionFactory {
     public SftpConnection createNewConnection() {
         try {
             return new SftpConnection(host, port, user, password);
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

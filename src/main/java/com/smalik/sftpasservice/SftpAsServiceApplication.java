@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SftpAsServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SftpAsServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SftpAsServiceApplication.class, args);
+    }
 
-	@Bean
+    @Bean
     public SftpConnectionFactory createFactory(
             @Value("${sftp.host:127.0.0.1}") String host,
             @Value("${sftp.port:2222}") int port,
             @Value("${sftp.user:foo}") String user,
             @Value("${sftp.password:pass}") String password) {
-	    return new SftpConnectionFactory(host, port, user, password);
+        return new SftpConnectionFactory(host, port, user, password);
     }
 }

@@ -42,7 +42,7 @@ public class SftpController {
 
             }).collect(Collectors.toList());
 
-        } catch(SftpException e) {
+        } catch (SftpException e) {
             logger.error("Something went wrong", e);
             return Collections.emptyList();
         }
@@ -55,7 +55,7 @@ public class SftpController {
             response.setContentType("application/octet-stream");
             connection.getChannel().get(defaultDir + "/" + filename, response.getOutputStream());
 
-        } catch(SftpException | IOException e) {
+        } catch (SftpException | IOException e) {
             logger.error("Something went wrong", e);
         }
     }
@@ -67,7 +67,7 @@ public class SftpController {
             connection.getChannel().rm(defaultDir + "/" + filename);
             return true;
 
-        } catch(SftpException e) {
+        } catch (SftpException e) {
             logger.error("Something went wrong", e);
             return false;
         }
@@ -80,7 +80,7 @@ public class SftpController {
             connection.getChannel().put(file.getInputStream(), defaultDir + "/" + filename);
             return true;
 
-        } catch(SftpException | IOException e) {
+        } catch (SftpException | IOException e) {
             logger.error("Something went wrong", e);
             return false;
         }
